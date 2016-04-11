@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+//This class has not changed since the first pacman lesson
 public class MyView extends View{
 	
 	Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pacman);

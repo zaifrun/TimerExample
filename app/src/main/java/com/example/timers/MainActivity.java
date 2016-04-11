@@ -1,8 +1,5 @@
 package com.example.timers;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,9 +9,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends Activity implements OnClickListener {
 
 	MyView gameView;
+	//The time used for the pacman
 	private Timer myTimer;
 	private int counter = 0;
 	private boolean running = false;
@@ -32,9 +33,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		button.setOnClickListener(this);
 		textView = (TextView) findViewById(R.id.textView);
 		gameView = (MyView) findViewById(R.id.gameView);
-		
+
+		//make a new timer
 		myTimer = new Timer();
-		running = true;
+		running = true; //should the game be running?
+		//We will call the timer 5 times each second
 	    myTimer.schedule(new TimerTask() {          
 	        @Override
 	        public void run() {
@@ -48,6 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onStop() {
 		super.onStop();
+		//just to make sure if the app is killed, that we stop the timer.
 		myTimer.cancel();
 	}
 	
@@ -65,12 +69,13 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Runnable Timer_Tick = new Runnable() {
 	    public void run() {
 
-	    //This method runs in the same thread as the UI.   
+	    //This method runs in the same thread as the UI.
+			// so we can draw
 	    	if (running)
 	    	{
-		    	counter++;
+		    	counter++; //update the counter - notice this is NOT seconds
 		    	textView.setText("Timer value: "+counter); 
-		    	gameView.move(20);
+		    	gameView.move(20); //move the pacman.
 	    	}
 
 	    }
@@ -97,6 +102,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	//if anything is pressed - we do the checks here
 	@Override
 	public void onClick(View v) {
 		if (v.getId()==R.id.startButton)
