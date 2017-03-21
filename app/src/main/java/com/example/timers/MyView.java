@@ -16,7 +16,9 @@ public class MyView extends View{
     int pacx = 50;
     int pacy = 400;
     int h,w;
-    
+
+	//resetting the game - setting the pacman to a
+	//starting x value and invalidate view.
     public void reset()
     {
     	pacx = 50;

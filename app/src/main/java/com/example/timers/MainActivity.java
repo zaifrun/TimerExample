@@ -73,7 +73,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// so we can draw
 	    	if (running)
 	    	{
-		    	counter++; //update the counter - notice this is NOT seconds
+		    	counter++;
+				//update the counter - notice this is NOT seconds in this example
+				//you need TWO counters - one for the time and one for the pacman
 		    	textView.setText("Timer value: "+counter); 
 		    	gameView.move(20); //move the pacman.
 	    	}
@@ -117,9 +119,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		{
 			counter = 0;
 			gameView.reset();
+			running = false;
 	    	textView.setText("Timer value: "+counter); 
-			//textView.invalidate();
-	
+
 		}
 	}
 }
