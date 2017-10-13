@@ -18,6 +18,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	//The time used for the pacman
 	private Timer myTimer;
 	private int counter = 0;
+	//you should put in the running in the game class
 	private boolean running = false;
 	TextView textView;
 	
@@ -38,7 +39,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		myTimer = new Timer();
 		running = true; //should the game be running?
 		//We will call the timer 5 times each second
-	    myTimer.schedule(new TimerTask() {          
+	    myTimer.schedule(new TimerTask() {
 	        @Override
 	        public void run() {
 	            TimerMethod();
@@ -77,7 +78,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				//update the counter - notice this is NOT seconds in this example
 				//you need TWO counters - one for the time and one for the pacman
 		    	textView.setText("Timer value: "+counter); 
-		    	gameView.move(20); //move the pacman.
+		    	gameView.move(20); //move the pacman - you
+				//should call a method on your game class to move
+				//the pacman instead of this
 	    	}
 
 	    }
@@ -118,7 +121,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		else if (v.getId()==R.id.resetButton)
 		{
 			counter = 0;
-			gameView.reset();
+			gameView.reset(); //you should call the newGame method instead of this
 			running = false;
 	    	textView.setText("Timer value: "+counter); 
 

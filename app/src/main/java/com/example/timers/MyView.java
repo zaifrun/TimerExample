@@ -35,7 +35,6 @@ public class MyView extends View{
 	
 	public MyView(Context context) {
 		super(context);
-		
 	}
 	
 	public MyView(Context context, AttributeSet attrs) {
