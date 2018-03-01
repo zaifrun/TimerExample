@@ -26,14 +26,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Button button = (Button) findViewById(R.id.startButton);
-		button.setOnClickListener(this);
-		button = (Button) findViewById(R.id.stopButton);
-		button.setOnClickListener(this);
-		button = (Button) findViewById(R.id.resetButton);
-		button.setOnClickListener(this);
-		textView = (TextView) findViewById(R.id.textView);
-		gameView = (MyView) findViewById(R.id.gameView);
+		findViewById(R.id.startButton).setOnClickListener(this);
+		findViewById(R.id.stopButton).setOnClickListener(this);
+		findViewById(R.id.resetButton).setOnClickListener(this);
+		textView = findViewById(R.id.textView);
+		gameView = findViewById(R.id.gameView);
 
 		//make a new timer
 		myTimer = new Timer();
