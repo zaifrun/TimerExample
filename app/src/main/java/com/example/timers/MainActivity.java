@@ -59,7 +59,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	    //We call the method that will work with the UI
 	    //through the runOnUiThread method.
-	    this.runOnUiThread(Timer_Tick);
+		this.runOnUiThread(Timer_Tick);
+
 	}
 
 
@@ -73,7 +74,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		    	counter++;
 				//update the counter - notice this is NOT seconds in this example
 				//you need TWO counters - one for the time and one for the pacman
-		    	textView.setText("Timer value: "+counter); 
+		    	textView.setText("Timer value: "+counter);
 		    	gameView.move(20); //move the pacman - you
 				//should call a method on your game class to move
 				//the pacman instead of this

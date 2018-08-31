@@ -31,7 +31,7 @@ public class MyView extends View{
     	if (pacx+x+bitmap.getWidth()<w)
     		pacx=pacx+x;
     	invalidate(); //redraw everything
-    }
+	}
 	
 	public MyView(Context context) {
 		super(context);
